@@ -25,9 +25,21 @@ textarea{
   white-space: pre-wrap;
 }
 
-.time-block{
+/* .time-block{
   text-align: center;
   border-radius: 15px;
+} */
+
+#clock {
+  text-align: center;
+  border-radius: 15px;
+  /* Added */
+  background-color: black;
+  color: white;
+  height: 50px;
+  padding: 15px;
+  box-shadow: 0 0 7px #222;
+  
 }
 
 .row {
@@ -37,21 +49,26 @@ textarea{
   }
 
   .first-column {
-    width: 150px;
-    height: 100px;
+    width: 100px;
+    height: 50px;
     border-radius: 10px;
     border-collapse: separate;
     background-color: black ;
     color: white;
   }
 
-  .second-column {
+  .second-column0, .second-column1, .second-column2, .second-column3, .second-column4, .second-column5, .second-column6, .second-column7, .second-column8, .second-column9, .second-column10, .second-column11, .second-column12, .second-column13 {
     border-radius: 10px;
   }
 
-  .third-column {
-    width: 150px;
-    height: 100px;
+  textarea {
+    border-left: none;
+    width: 100%;
+  }
+
+  .third-column0, .third-column1, .third-column2, .third-column3, .third-column4, .third-column5, .third-column6, .third-column7, .third-column8, .third-column9, .third-column10, .third-column11, .third-column12, .third-column13 {
+    width: 70px;
+    /* height: 50px; */
     border-radius: 10px;
     border-collapse: separate;
     background-color: #06AED5;   
