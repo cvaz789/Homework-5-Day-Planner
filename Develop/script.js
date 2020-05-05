@@ -38,37 +38,59 @@ var clock = $("<div id=clock>")
 
       //ONCLICK EVENTS TO SAVE TO LOCAL STORAGE AND VALIDATE TASK HOUR VS CURRENT HOUR
       
-      // 9 AM STARTS // 
-        var textContent0 = localStorage.getItem("textContent0");
-        var selector = $("#userText0");
-        textContent0 = selector.val();
-        $(".third-column0").on("click", function() {
-          var content0 = $("#userText0").val();
-          localStorage.setItem("textContent0", content0);
-          var userText0 = $("#userText0").val();
+      // 9 AM STARTS //         
+        $(document).ready(function() {
 
-          //PAST, PRESENT, FUTUR VALIDATION
-          //var parsedStringed = parseInt($(".first-column")[0].innerHTML);
-          //var parsedStringed2 = parseInt($(".first-column")[1].innerHTML);
-          var taskHour = parseInt($(".first-column")[0].innerHTML);
-          var currentHour = moment().hour();
+            
 
-          if(taskHour < currentHour ) {
-            $(".second-column0").css("background-color", "grey")
-          }
-          else if(taskHour === currentHour) {
-            $(".second-column0").css("background-color", "salmon")
-          }
-          else{
-            $(".second-column0").css("background-color", "green")
-          }
-        })
+            var textContent0 = localStorage.getItem("textContent0");
+            $("#userText0").val(textContent0);
+
+            var attrColor = localStorage.getItem("AttributeColor");
+            $(".second-column0").val(attrColor);     
+
+            $(".third-column0").on("click", function() {
+                var taskHour = parseInt($(".first-column")[0].innerHTML);
+                var currentHour = moment().hour();
+
+                if(taskHour < currentHour ) {
+                    var content0 = $("#userText0").val();
+                    localStorage.setItem("textContent0", content0);
+                    //$(".second-column0").css("background-color", "grey")
+                    $(".second-column0").attr("id", "past");    
+                
+                    var valueColor = $(".second-column0").attr("id");
+                    localStorage.setItem("AttributeColor", valueColor);
+
+                }
+                else if(taskHour === currentHour) {
+                    var content0 = $("#userText0").val();
+                    localStorage.setItem("textContent0", content0);
+                    $(".second-column0").css("background-color", "salmon")
+                }
+                else{
+                    var content0 = $("#userText0").val();
+                    localStorage.setItem("textContent0", content0);
+                    //$(".second-column0").css("background-color", "green")
+                    $(".second-column0").attr("id", "future")
+                    var valueColor = $(".second-column0").attr("id");
+                    localStorage.setItem("AttributeColor", valueColor);
+                }
+            });
+
+
+        });
+            
+
+        
+        
       // 9 AM ENDS // 
 
       //10 AM STARTS//
         //LOCAL STORAGE ISSUE
         var textContent1 = localStorage.getItem("textContent1");
         var content1 = $("#userText1").val();
+
         $(".third-column1").on("click", function() {
           var content1 = $("#userText1").val();
           localStorage.setItem("textContent1", content1);
@@ -407,4 +429,3 @@ var clock = $("<div id=clock>")
           }
         })
       //22 HRS END HERE //
-      
