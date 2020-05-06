@@ -41,8 +41,6 @@ var clock = $("<div id=clock>")
       // 9 AM STARTS //         
         $(document).ready(function() {
 
-            
-
             var textContent0 = localStorage.getItem("textContent0");
             $("#userText0").val(textContent0);
 
@@ -50,32 +48,37 @@ var clock = $("<div id=clock>")
             $(".second-column0").val(attrColor);     
 
             $(".third-column0").on("click", function() {
-                var taskHour = parseInt($(".first-column")[0].innerHTML);
+                $(".second-column").each(function(i, col) {
+                    
+                var taskHour = parseInt($(".first-column")[i].innerHTML);
+                console.log(taskHour);
                 var currentHour = moment().hour();
+                var content0 = $("#userText"+i).val();
+                localStorage.setItem("textContent"+i, content0);
 
                 if(taskHour < currentHour ) {
-                    var content0 = $("#userText0").val();
-                    localStorage.setItem("textContent0", content0);
+                    
                     //$(".second-column0").css("background-color", "grey")
-                    $(".second-column0").attr("id", "past");    
+                    $(".second-column"+i).attr("id", "past");    
                 
-                    var valueColor = $(".second-column0").attr("id");
+                    var valueColor = $(".second-column"+i).attr("id");
                     localStorage.setItem("AttributeColor", valueColor);
 
                 }
                 else if(taskHour === currentHour) {
-                    var content0 = $("#userText0").val();
-                    localStorage.setItem("textContent0", content0);
-                    $(".second-column0").css("background-color", "salmon")
+                    
+                    $(".second-column"+i).css("background-color", "salmon")
                 }
                 else{
-                    var content0 = $("#userText0").val();
-                    localStorage.setItem("textContent0", content0);
+                    
                     //$(".second-column0").css("background-color", "green")
-                    $(".second-column0").attr("id", "future")
-                    var valueColor = $(".second-column0").attr("id");
+                    $(".second-column"+i).attr("id", "future")
+                    var valueColor = $(".second-column"+i).attr("id");
                     localStorage.setItem("AttributeColor", valueColor);
                 }
+                })
+                
+                
             });
 
 
@@ -89,7 +92,7 @@ var clock = $("<div id=clock>")
       //10 AM STARTS//
         //LOCAL STORAGE ISSUE
         var textContent1 = localStorage.getItem("textContent1");
-        var content1 = $("#userText1").val();
+        $("#userText1").val(textContent1);
 
         $(".third-column1").on("click", function() {
           var content1 = $("#userText1").val();
@@ -116,7 +119,7 @@ var clock = $("<div id=clock>")
 
       //11 HRS START HERE//
         var textContent2 = localStorage.getItem("textContent2");
-        var content2 = $("#userText2").val();
+        content2 = $("#userText2").val(textContent2);
         $(".third-column2").on("click", function() {
           var content2 = $("#userText2").val();
           localStorage.setItem("textContent2", content2);
@@ -142,7 +145,7 @@ var clock = $("<div id=clock>")
 
       //12 HRS START HERE//
         var textContent3 = localStorage.getItem("textContent3");
-        var content3 = $("#userText3").val();
+        content3 = $("#userText3").val(textContent3);
         $(".third-column3").on("click", function() {
           var content3 = $("#userText3").val();
           localStorage.setItem("textContent3", content3);
@@ -168,7 +171,7 @@ var clock = $("<div id=clock>")
 
       //13 HRS START HERE//
         var textContent4 = localStorage.getItem("textContent4");
-        var content4 = $("#userText4").val();
+        content4 = $("#userText4").val(textContent4);
         $(".third-column4").on("click", function() {
           var content4 = $("#userText4").val();
           localStorage.setItem("textContent4", content4);
@@ -194,7 +197,7 @@ var clock = $("<div id=clock>")
 
       //14 HRS START HERE//
         var textContent5 = localStorage.getItem("textContent5");
-        var content5 = $("#userText5").val();
+        content5 = $("#userText5").val(textContent5);
         $(".third-column5").on("click", function() {
           var content5 = $("#userText5").val();
           localStorage.setItem("textContent5", content5);
@@ -220,7 +223,7 @@ var clock = $("<div id=clock>")
 
       //15 HRS START HERE//
         var textContent6 = localStorage.getItem("textContent6");
-        var content6 = $("#userText6").val();
+        content6 = $("#userText6").val(textContent6);
         $(".third-column6").on("click", function() {
           
           var content6 = $("#userText6").val();
@@ -251,7 +254,7 @@ var clock = $("<div id=clock>")
 
       //16 HRS START HERE//
         var textContent7 = localStorage.getItem("textContent7");
-        var content7 = $("#userText7").val();
+        content7 = $("#userText7").val(textContent7);
         $(".third-column7").on("click", function() {
           var content7 = $("#userText7").val();
           localStorage.setItem("textContent7", content7);
@@ -277,7 +280,7 @@ var clock = $("<div id=clock>")
 
       //17 HRS START HERE//
         var textContent8 = localStorage.getItem("textContent8");
-        var content8 = $("#userText8").val();
+        content8 = $("#userText8").val(textContent8);
         $(".third-column8").on("click", function() {
           var content8 = $("#userText8").val();
           localStorage.setItem("textContent8", content8);
@@ -303,7 +306,7 @@ var clock = $("<div id=clock>")
 
       //18 HRS START HERE//
         var textContent9 = localStorage.getItem("textContent9");
-        var content9 = $("#userText9").val();
+        content9 = $("#userText9").val(textContent9);
         $(".third-column9").on("click", function() {
           var content9 = $("#userText9").val();
           localStorage.setItem("textContent9", content9);
@@ -329,7 +332,7 @@ var clock = $("<div id=clock>")
 
       // 19 HRS START HERE //
         var textContent10 = localStorage.getItem("textContent10");
-        var content10 = $("#userText10").val();
+        content10 = $("#userText10").val(textContent10);
         $(".third-column10").on("click", function() {
           var content10 = $("#userText10").val();
           var userText10 = $("#userText10").val();
@@ -355,7 +358,7 @@ var clock = $("<div id=clock>")
 
       //20 HRS START HERE //
         var textContent11 = localStorage.getItem("textContent11");
-        var content11 = $("#userText11").val();
+        content11 = $("#userText11").val(textContent11);
         $(".third-column11").on("click", function() {
           var content11 = $("#userText11").val();
           localStorage.setItem("textContent11", content11);
@@ -380,7 +383,7 @@ var clock = $("<div id=clock>")
       
       //21 HRS START HERE //
         var textContent12 = localStorage.getItem("textContent12");
-        var content12 = $("#userText12").val();
+        content12 = $("#userText12").val(textContent12);
         $(".third-column12").on("click", function() {
           var content12 = $("#userText12").val();
           localStorage.setItem("textContent12", content12);
@@ -406,7 +409,7 @@ var clock = $("<div id=clock>")
 
       //22 HRS START HERE //
         var textContent13 = localStorage.getItem("textContent13");
-        var content13 = $("#userText13").val();
+        content13 = $("#userText13").val(textContent13);
         $(".third-column13").on("click", function() {
           var content13 = $("#userText13").val();
           var userText13 = $("#userText13").val();
