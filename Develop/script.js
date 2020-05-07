@@ -83,10 +83,6 @@ var clock = $("<div id=clock>")
 
 
         });
-            
-
-        
-        
       // 9 AM ENDS // 
 
       //10 AM STARTS//
